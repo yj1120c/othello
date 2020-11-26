@@ -10,8 +10,7 @@ extern int valid_moves(char board[][SIZE], int moves[][SIZE], char player);
 extern void make_move(char board[][SIZE], int row, int col, char player);
 extern int get_score(char board[][SIZE], char player);
 
-int main()
-{
+int main(int argc, char *argv[]) {
   char board [SIZE][SIZE] = { 0 };
   int moves[SIZE][SIZE] = { 0 };
   int row = 0;
@@ -128,6 +127,8 @@ int main()
    }while(tolower(again) == 'y');
 
    printf("\nGoodbye\n");
+   
+   return 0;
 }
 
 
