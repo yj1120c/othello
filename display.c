@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #define SIZE 6
+
 void display(char board[][SIZE])
 {
    int row  = 0;
