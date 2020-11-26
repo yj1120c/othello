@@ -4,7 +4,7 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void display(char board[][SIZE]);
+extern void display(char board[][SIZE]);
 extern int valid_moves(char board[][SIZE], int moves[][SIZE], char player);
 extern void make_move(char board[][SIZE], int row, int col, char player);
 int best_move(char board[][SIZE], int moves[][SIZE], char player);
@@ -130,35 +130,7 @@ int main()
    printf("\nGoodbye\n");
 }
 
-void display(char board[][SIZE])
-{
-   int row  = 0;
-   int col = 0;
-   char col_label = 'a';
 
-   printf("\n ");
-   for(col = 0 ; col<SIZE ;col++)
-     printf("   %c", col_label+col);
-   printf("\n");
-
-
-   for(row = 0; row < SIZE; row++)
-   {
-     printf("  +");
-     for(col = 0; col<SIZE; col++)
-       printf("---+");
-     printf("\n%2d|",row + 1);
-
-     for(col = 0; col<SIZE; col++)
-       printf(" %c |", board[row][col]);
-     printf("\n");
-   }
-
-   printf("  +");
-   for(col = 0 ; col<SIZE ;col++)
-     printf("---+");
-   printf("\n");
-}
 
 
 
