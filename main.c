@@ -4,10 +4,10 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+//함수 선언 
 extern void display(char board[][SIZE]);
 extern int valid_moves(char board[][SIZE], int moves[][SIZE], char player);
 extern void make_move(char board[][SIZE], int row, int col, char player);
-int best_move(char board[][SIZE], int moves[][SIZE], char player);
 extern int get_score(char board[][SIZE], char player);
 
 int main()
@@ -27,7 +27,7 @@ int main()
   int player = 0;
 
   printf("   Player1 - (O)\n   Player2  - (X).\n");
-  printf("\n 엔터를 누르면 게임을 시작합니다.\n");
+  printf("\n 엔터를 누르면 게임을 시작합니다.\n"); //게임 시작 화면 
   scanf("%c", &again);
 
    do
@@ -54,7 +54,7 @@ int main()
            {
              fflush(stdin);
              printf("Player 1 행열을 입력하여 움직여주세요. : ");
-             scanf("%d%c", &x, &y);
+             scanf("%d%c", &x, &y); //player1의 행렬 받기  
              y = tolower(y) - 'a';
              x--;
              if( x>=0 && y>=0 && x<SIZE && y<SIZE && moves[x][y])
@@ -75,7 +75,7 @@ int main()
              scanf("%c", &again);
            }
            else
-             printf("\n둘다 움직일 수 없습니다. 게임을 종료합니다.\n");
+             printf("\n둘다 움직일 수 없습니다. 게임을 종료합니다.\n"); //둘다 움직일 수 없을 경 우  
        }
        else
        {
@@ -85,7 +85,7 @@ int main()
              {
                fflush(stdin);
                printf("Player 2 행열을 입력하여 움직여주세요. : ");
-               scanf("%d%c", &x, &y);
+               scanf("%d%c", &x, &y); //player2의 행렬 받기  
                y = tolower(y) - 'a';
                x--;
                if( x>=0 && y>=0 && x<SIZE && y<SIZE && moves[x][y])
@@ -106,7 +106,7 @@ int main()
                scanf("%c", &again);
              }
              else
-               printf("\n둘다 움직일 수 없습니다. 게임을 종료합니다.\n");
+               printf("\n둘다 움직일 수 없습니다. 게임을 종료합니다.\n"); //둘다 움직일 수 없을 경 우
          }
      }while(no_of_moves < SIZE*SIZE && invalid_moves<2);
 
